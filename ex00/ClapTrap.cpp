@@ -84,14 +84,14 @@ unsigned int	ClapTrap::getAttackDamage()
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (!_energyPoints)
-	{
-		std::cout << _name << " has no energy to attack " << target << ".\n";
-		return ;
-	}
 	if (!_hitPoints)
 	{
 		std::cout << _name << " has no hit points to attack " << target << ".\n";
+		return ;
+	}
+	if (!_energyPoints)
+	{
+		std::cout << _name << " has no energy to attack " << target << ".\n";
 		return ;
 	}
 	std::cout << _name << " attacked " << target << " causing " << _attackDamage << " hit points of damage!\n";
@@ -113,14 +113,14 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (!_energyPoints)
-	{
-		std::cout << _name << " has no energy to be repaired.\n";
-		return ;
-	}
 	if (!_hitPoints)
 	{
 		std::cout << _name << " has no hit points to be repaired.\n";
+		return ;
+	}
+	if (!_energyPoints)
+	{
+		std::cout << _name << " has no energy to be repaired.\n";
 		return ;
 	}
 	std::cout << _name << " has repaired itself and got " << amount << " hit points back!\n";
